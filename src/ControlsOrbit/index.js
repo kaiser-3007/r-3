@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from "react";
-import * as THREE from "./js/three.modules";
-import { OrbitControls } from '../libs/OrbitControls';
+import * as THREE from "three";
+import { OrbitControls } from '../libs/controls/OrbitControls';
 import './styles.css';
 
 let scene, camera, renderer, geometry, material, cube, controls;
@@ -9,7 +9,7 @@ const dimension = {
   height: 300
 }
 
-const Test = () => {
+const ControlsOrbit = () => {
   useEffect(() => {
     init();
     animate();
@@ -23,19 +23,20 @@ const Test = () => {
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(dimension.width, dimension.height);
-    renderer.setClearColor('#e8effc', 1)
-    document.querySelector('#three-container').appendChild(renderer.domElement);
+    renderer.setClearColor('#f9d4d3', 1);
+    renderer.domElement.style.outline = 'none';
+    document.querySelector('#orbit-controls-container').appendChild(renderer.domElement);
 
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
     controls.screenSpacePanning = false;
-    controls.minDistance = 100;
-    controls.maxDistance = 500;
+    controls.minDistance = 5;
+    controls.maxDistance = 50;
     controls.maxPolarAngle = Math.PI / 2;
 
     geometry = new THREE.BoxGeometry(1, 1, 1);
-    material = new THREE.MeshBasicMaterial({ color: '#624ce0', wireframe: true });
+    material = new THREE.MeshBasicMaterial({ color: '#000000', wireframe: true });
     cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
   }
@@ -52,8 +53,8 @@ const Test = () => {
   }
 
   return (
-    <div id="three-container" className="container" />
+    <div id="orbit-controls-container" className="container" />
   )
 }
 
-export default Test;
+export default ControlsOrbit;

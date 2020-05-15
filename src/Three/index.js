@@ -1,8 +1,9 @@
 import React, { useEffect, Fragment } from "react";
-import * as THREE from "three";
+import * as THREE from "./js/three.modules";
+import { OrbitControls } from '../libs/OrbitControls';
 import './styles.css';
 
-let scene, camera, renderer, geometry, material, cube;
+let scene, camera, renderer, geometry, material, cube, controls;
 const dimension = {
   width: 300,
   height: 300
@@ -25,6 +26,14 @@ const Test = () => {
     renderer.setClearColor('#e8effc', 1)
     document.querySelector('#three-container').appendChild(renderer.domElement);
 
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.screenSpacePanning = false;
+    controls.minDistance = 100;
+    controls.maxDistance = 500;
+    controls.maxPolarAngle = Math.PI / 2;
+
     geometry = new THREE.BoxGeometry(1, 1, 1);
     material = new THREE.MeshBasicMaterial({ color: '#624ce0', wireframe: true });
     cube = new THREE.Mesh(geometry, material);
@@ -36,6 +45,8 @@ const Test = () => {
 
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
+
+    controls.update();
 
     renderer.render(scene, camera);
   }

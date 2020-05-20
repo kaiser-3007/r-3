@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from "react";
 import * as THREE from "three";
-import './styles.css';
+import styles from './styles.scss';
 
 let scene, camera, renderer, geometry, material, cube, controls;
 const dimension = {
@@ -41,7 +41,7 @@ const SimpleCubeRotation = () => {
   }
 
   return (
-    <div id="simple-cube-container" className="container" />
+    <div id="simple-cube-container" className={styles.container} />
   )
 }
 

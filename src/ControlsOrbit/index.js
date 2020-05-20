@@ -1,7 +1,7 @@
 import React, { useEffect, Fragment } from "react";
 import * as THREE from "three";
 import { OrbitControls } from '../libs/controls/OrbitControls';
-import './styles.css';
+import styles from './styles.scss';
 
 let scene, camera, renderer, geometry, material, cube, controls;
 const dimension = {
@@ -53,7 +53,7 @@ const ControlsOrbit = () => {
   }
 
   return (
-    <div id="orbit-controls-container" className="container" />
+    <div id="orbit-controls-container" className={styles.container} />
   )
 }
 

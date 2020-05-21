@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from "react";
+import React, { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from '../libs/controls/OrbitControls';
 import styles from './styles.scss';

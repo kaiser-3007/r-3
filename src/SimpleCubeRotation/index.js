@@ -41,7 +41,10 @@ const SimpleCubeRotation = () => {
   }
 
   return (
-    <div id="simple-cube-container" className={styles.container} />
+    <div className={styles.container}>
+      <div id="simple-cube-container" className={styles.scene} />
+      <div className={styles.text}>Simple Scene</div>
+    </div>
   )
 }
 

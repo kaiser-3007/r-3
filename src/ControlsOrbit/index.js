@@ -53,7 +53,10 @@ const ControlsOrbit = () => {
   }
 
   return (
-    <div id="orbit-controls-container" className={styles.container} />
+    <div className={styles.container}>
+      <div id="orbit-controls-container" className={styles.scene} />
+      <div className={styles.text}>Orbit Controls</div>
+    </div>
   )
 }
 

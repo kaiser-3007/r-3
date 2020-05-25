@@ -5,6 +5,7 @@ import { OrbitControls } from '../controls/OrbitControls';
 const ThreeScene = ({
   containerId,
   dimension: { width = 100, height = 100 } = {},
+  // cameras: [],
   orbitControls = false,
   lights = {}
 }) => {
@@ -13,6 +14,7 @@ const ThreeScene = ({
 
   useEffect(() => {
     init();
+    // addCameras(cameras);
     orbitControls && addOrbitControls();
     lights.type && addLight();
     animate();

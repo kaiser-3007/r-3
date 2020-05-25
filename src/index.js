@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './styles.scss';
 import ThreeScene from './libs/self/Scene';
+// import cameras from './configs/camera';
 
 const App = () => (
   <div>
@@ -30,6 +31,16 @@ const App = () => (
           lights={{ type: 'AmbientLight' }} />
         <div className={styles.text}>Ambient Light</div>
       </div>
+
+      {/* <div className={styles.container}>
+        <ThreeScene
+          containerId="camera-perspective"
+          dimension={{ width: 300, height: 300 }}
+          cameras={[cameras.perspective]}
+          orbitControls={true}
+          lights={{ type: 'AmbientLight' }} />
+        <div className={styles.text}>Ambient Light</div>
+      </div> */}
     </div>
   </div>
 )

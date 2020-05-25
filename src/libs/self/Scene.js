@@ -5,7 +5,8 @@ import { OrbitControls } from '../controls/OrbitControls';
 const ThreeScene = ({
   containerId,
   dimension: { width = 100, height = 100 } = {},
-  orbitControls = false
+  orbitControls = false,
+  lights = {}
 }) => {
   let scene, camera, renderer, geometry, material, cube;
   let controls;
@@ -13,6 +14,7 @@ const ThreeScene = ({
   useEffect(() => {
     init();
     orbitControls && addOrbitControls();
+    lights.type && addLight();
     animate();
   });
 
@@ -22,14 +24,15 @@ const ThreeScene = ({
     camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     camera.position.z = 5;
 
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(width, height);
     renderer.setClearColor('#e8effc', 1);
+    renderer.domElement.style.outline = 'none';
 
     document.getElementById(containerId).appendChild(renderer.domElement);
 
     geometry = new THREE.BoxGeometry(1, 1, 1);
-    material = new THREE.MeshBasicMaterial({ color: '#624ce0', wireframe: true });
+    material = new THREE.MeshStandardMaterial({ color: '#624ce0', wireframe: false });
     cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
   }
@@ -42,6 +45,11 @@ const ThreeScene = ({
     controls.minDistance = 5;
     controls.maxDistance = 50;
     controls.maxPolarAngle = Math.PI / 2;
+  }
+
+  const addLight = () => {
+    const light = new THREE.AmbientLight(0x404040);
+    scene.add(light);
   }
 
   const animate = () => {

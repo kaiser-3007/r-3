@@ -26,13 +26,13 @@ const ThreeScene = ({
 
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(width, height);
-    renderer.setClearColor('#e8effc', 1);
+    renderer.setClearColor('#f1f1f1', 1);
     renderer.domElement.style.outline = 'none';
 
     document.getElementById(containerId).appendChild(renderer.domElement);
 
     geometry = new THREE.BoxGeometry(1, 1, 1);
-    material = new THREE.MeshStandardMaterial({ color: '#624ce0', wireframe: false });
+    material = new THREE.MeshStandardMaterial({ color: '#77a6f8', wireframe: false });
     cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
   }
@@ -48,7 +48,7 @@ const ThreeScene = ({
   }
 
   const addLight = () => {
-    const light = new THREE.AmbientLight(0x404040);
+    const light = new THREE.AmbientLight(0xffffff);
     scene.add(light);
   }
 

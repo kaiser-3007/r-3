@@ -16,19 +16,19 @@ const App = () => (
 
       <div className={styles.container}>
         <ThreeScene
-          containerId="ambient-light"
+          containerId="orbit-controls"
           dimension={{ width: 300, height: 300 }}
-          lights={{ type: 'AmbientLight' }} />
-        <div className={styles.text}>Ambient Light</div>
+          orbitControls={true} />
+        <div className={styles.text}>Orbit Controls</div>
       </div>
 
       <div className={styles.container}>
         <ThreeScene
-          containerId="orbit-controls"
+          containerId="ambient-light"
           dimension={{ width: 300, height: 300 }}
-          lights={{ type: 'AmbientLight' }}
-          orbitControls={true} />
-        <div className={styles.text}>Orbit Controls</div>
+          orbitControls={true}
+          lights={{ type: 'AmbientLight' }} />
+        <div className={styles.text}>Ambient Light</div>
       </div>
     </div>
   </div>

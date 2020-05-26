@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './styles.scss';
 import ThreeScene from './libs/self/Scene';
-// import cameras from './configs/camera';
+import cameras from './configs/camera';
 
 const App = () => (
   <div>
@@ -32,15 +32,23 @@ const App = () => (
         <div className={styles.text}>Ambient Light</div>
       </div>
 
-      {/* <div className={styles.container}>
+      <div className={styles.container}>
         <ThreeScene
           containerId="camera-perspective"
           dimension={{ width: 300, height: 300 }}
-          cameras={[cameras.perspective]}
-          orbitControls={true}
+          cameras={cameras[0]}
           lights={{ type: 'AmbientLight' }} />
-        <div className={styles.text}>Ambient Light</div>
-      </div> */}
+        <div className={styles.text}>Perspective Camera</div>
+      </div>
+
+      <div className={styles.container}>
+        <ThreeScene
+          containerId="camera-orthographic"
+          dimension={{ width: 300, height: 300 }}
+          cameras={cameras[1]}
+          lights={{ type: 'AmbientLight' }} />
+        <div className={styles.text}>Orthographic Camera</div>
+      </div>
     </div>
   </div>
 )

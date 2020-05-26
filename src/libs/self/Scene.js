@@ -1,20 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from '../controls/OrbitControls';
+import { addCameras } from '../../utils/camera';
 
 const ThreeScene = ({
   containerId,
   dimension: { width = 100, height = 100 } = {},
-  // cameras: [],
+  cameras = [],
   orbitControls = false,
   lights = {}
 }) => {
-  let scene, camera, renderer, geometry, material, cube;
+  let scene, renderer, geometry, material, cube;
+  let camera;
   let controls;
 
   useEffect(() => {
     init();
-    // addCameras(cameras);
     orbitControls && addOrbitControls();
     lights.type && addLight();
     animate();
@@ -23,8 +24,7 @@ const ThreeScene = ({
   const init = () => {
     scene = new THREE.Scene();
 
-    camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    camera.position.z = 5;
+    camera = addCameras(cameras);
 
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(width, height);

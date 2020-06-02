@@ -28,6 +28,4 @@ const addCameras = (cameras) => {
   }
 }
 
-export {
-  addCameras
-};
+export { addCameras };

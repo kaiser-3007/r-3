@@ -7,33 +7,24 @@ import allScenes from './configs/allScenesConfig';
 import singleScene from './configs/singleSceneConfig';
 
 const AllScenes = () => (
-  <div>
-    <h1 className={styles.heading}>React - ThreeJS Experiments</h1>
-    <div className={styles.pages}>
-      <Link className={styles.page} to="/"><div>All Examples</div></Link>
-      <Link className={styles.page} to="/onescene"><div>Single Scene</div></Link>
-    </div>
-    <div className={styles.examples}>
-      {allScenes.map((props, index) => <Scene key={index} {...props} />)}
-    </div>
+  <div className={styles.examples}>
+    {allScenes.map((props, index) => <Scene key={index} {...props} />)}
   </div>
 )
 
 const SingleScene = () => (
-  <div>
-    <h1 className={styles.heading}>React - ThreeJS Experiments</h1>
-    <div className={styles.pages}>
-      <Link className={styles.page} to="/"><div>All Examples</div></Link>
-      <Link className={styles.page} to="/onescene"><div>Single Scene</div></Link>
-    </div>
-    <div className={styles.examples}>
-      <Scene {...singleScene} />
-    </div>
+  <div className={styles.examples}>
+    <Scene {...singleScene} />
   </div>
 )
 
 const Routing = () => (
   <Router>
+    <h1 className={styles.heading}>React - ThreeJS Experiments</h1>
+    <div className={styles.pages}>
+      <Link className={styles.page} to="/"><div>All Examples</div></Link>
+      <Link className={styles.page} to="/onescene"><div>Single Scene</div></Link>
+    </div>
     <Route exact path="/">
       <AllScenes />
     </Route>

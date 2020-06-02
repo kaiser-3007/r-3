@@ -7,12 +7,29 @@ export default {
   },
   orbitControls: true,
   lights: {
-    type: 'AmbientLight'
+    type: 'ambient',
+    args: {
+      color: 0xffffff,
+      intensity: 1,
+      castShadow: true
+    },
+    temps: {
+      position: {
+        x: 0,
+        y: 0,
+        z: 0
+      },
+      scale: {
+        x: 1,
+        y: 1,
+        z: 1
+      }
+    }
   },
-  cameras: [{
+  cameras: {
     type: 'perspective',
     args: {
-      fov: 20,
+      fov: 90,
       width: 800,
       height: 600,
       near: 0.1,
@@ -30,28 +47,5 @@ export default {
         z: 1
       }
     }
-  },
-  {
-    type: 'orthographic',
-    args: {
-      left: -2,
-      right: 2,
-      top: 2,
-      bottom: -2,
-      near: 0.1,
-      far: 1000
-    },
-    temps: {
-      position: {
-        x: 0,
-        y: 0,
-        z: 5
-      },
-      scale: {
-        x: 1,
-        y: 1,
-        z: 1
-      }
-    }
-  }]
+  }
 }

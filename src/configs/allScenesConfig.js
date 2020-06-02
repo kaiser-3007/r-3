@@ -25,7 +25,24 @@ export default [
     },
     orbitControls: true,
     lights: {
-      type: 'AmbientLight'
+      type: 'ambient',
+      args: {
+        color: 0xffffff,
+        intensity: 1,
+        castShadow: true
+      },
+      temps: {
+        position: {
+          x: 0,
+          y: 0,
+          z: 0
+        },
+        scale: {
+          x: 1,
+          y: 1,
+          z: 1
+        }
+      }
     }
   },
   {
@@ -37,9 +54,26 @@ export default [
     },
     orbitControls: true,
     lights: {
-      type: 'AmbientLight'
+      type: 'ambient',
+      args: {
+        color: 0xffffff,
+        intensity: 1,
+        castShadow: true
+      },
+      temps: {
+        position: {
+          x: 0,
+          y: 0,
+          z: 0
+        },
+        scale: {
+          x: 1,
+          y: 1,
+          z: 1
+        }
+      }
     },
-    cameras: [{
+    cameras: {
       type: 'perspective',
       args: {
         fov: 20,
@@ -60,7 +94,7 @@ export default [
           z: 1
         }
       }
-    }]
+    }
   },
   {
     sceneLabel: 'Orthographic Camera',
@@ -71,9 +105,26 @@ export default [
     },
     orbitControls: true,
     lights: {
-      type: 'AmbientLight'
+      type: 'ambient',
+      args: {
+        color: 0xffffff,
+        intensity: 1,
+        castShadow: true
+      },
+      temps: {
+        position: {
+          x: 0,
+          y: 0,
+          z: 0
+        },
+        scale: {
+          x: 1,
+          y: 1,
+          z: 1
+        }
+      }
     },
-    cameras: [{
+    cameras: {
       type: 'orthographic',
       args: {
         left: -2,
@@ -95,6 +146,6 @@ export default [
           z: 1
         }
       }
-    }]
+    }
   }
 ]

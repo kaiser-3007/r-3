@@ -1,0 +1,22 @@
+.container {
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 40px 0 rgba(0, 0, 0, 0.2);
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 5px solid white;
+  outline: none;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  .text {
+    font-family: monsterRat;
+    font-size: 14px;
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    font-weight: 600;
+  }
+}

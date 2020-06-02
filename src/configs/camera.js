@@ -12,7 +12,7 @@ export default [
       position: {
         x: 0,
         y: 0,
-        z: 5
+        z: 10
       },
       scale: {
         x: 1,

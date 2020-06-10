@@ -10,8 +10,7 @@ export default {
     type: 'ambient',
     args: {
       color: 0xffffff,
-      intensity: 1,
-      castShadow: true
+      intensity: 1
     },
     temps: {
       position: {

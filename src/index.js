@@ -13,6 +13,7 @@ const AllScenes = () => (
     <div className={styles.pages}>
       <Link className={styles.page} to="/"><div>All Examples</div></Link>
       <Link className={styles.page} to="/onescene"><div>Single Scene</div></Link>
+      <Link className={styles.page} to="/audioscene"><div>Audio Scene</div></Link>
     </div>
     <div className={styles.examples}>
       {allScenes.map((props, index) => <Scene key={index} {...props} />)}
@@ -26,6 +27,7 @@ const SingleScene = () => (
     <div className={styles.pages}>
       <Link className={styles.page} to="/"><div>All Examples</div></Link>
       <Link className={styles.page} to="/onescene"><div>Single Scene</div></Link>
+      <Link className={styles.page} to="/audioscene"><div>Audio Scene</div></Link>
     </div>
     <div className={styles.examples}>
       <Scene {...singleScene} />
